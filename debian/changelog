@@ -1,3 +1,10 @@
+openni (1.5.4.0-6) unstable; urgency=low
+
+  * Fix compile flags for armhf
+  * Fix install rules for armhf
+
+ -- Austin Hendrix <namniart@gmail.com>  Thu, 09 Jan 2014 22:03:25 -0800
+
 openni (1.5.4.0-5) unstable; urgency=low
 
   * Fix USB code and printf

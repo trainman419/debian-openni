@@ -1,0 +1,33 @@
+Description: Build for armhf
+ Switch to hard-float for building on armhf.
+ .
+ openni (1.5.4.0-5) unstable; urgency=low
+ .
+   * Fix USB code and printf
+   * Adapt to libopenni-sensor-primesense SONAME bump
+Author: Jochen Sprickerhof <launchpad@jochen.sprickerhof.de>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- openni-1.5.4.0.orig/Platform/Linux/Build/Common/Platform.Arm
++++ openni-1.5.4.0/Platform/Linux/Build/Common/Platform.Arm
+@@ -1,7 +1,7 @@
+ ifeq "$(CFG)" "Release"
+ 
+     # Hardware specifying flags
+-    CFLAGS += -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp #-mcpu=cortex-a8
++    CFLAGS += -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=hard
+ 
+     # Optimization level, minus currently buggy optimizing methods (which break bit-exact)
+     CFLAGS += -O3 -fno-tree-pre -fno-strict-aliasing
